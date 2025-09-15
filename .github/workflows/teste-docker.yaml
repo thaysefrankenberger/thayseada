@@ -25,7 +25,7 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/minha-app:latest .
 
- - name: Testar container
+      - name: Testar container
         run: |
           docker run -d -p 8080:80 --name test-app ${{ secrets.DOCKERHUB_USERNAME }}/minha-app:latest
           sleep 5
